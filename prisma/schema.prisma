@@ -23,3 +23,44 @@ model Jobs {
   jobType Json
   createdAt DateTime @default(now())
 }
+
+model Trips {
+  id String @id @unique
+  name String
+  nights Int
+  days Int
+  destinationItinerary Json
+  images Json
+  inclusions Json
+  themes Json
+  price Int
+  destinationDetails Json
+  detailedIntineary Json
+  description String
+  packageIteniary Json
+  scrapedOn DateTime @default(now())
+}
+
+model Flights {
+  id Int @default(autoincrement()) @id
+  name String
+  logo String
+  from String
+  to String
+  departureTime String
+  arrivalTime String
+  duration String
+  scrappedOn DateTime @default(now())
+  price Int
+  jobId Int
+}
+
+model Hotels {
+  id Int @default(autoincrement()) @id
+  name String
+  image String
+  price Int
+  jobId Int
+  location String
+  scrappedOn DateTime @default(now())
+}
