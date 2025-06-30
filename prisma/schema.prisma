@@ -8,6 +8,16 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model User {
+  id Int @default(autoincrement()) @id
+  email String @unique
+  password String
+  firstName String
+  lastName String
+  createdAt DateTime @default(now())
+  bookings Bookings[]
+}
+
 model Admin {
   id Int @default(autoincrement()) @id
   email String @unique
@@ -63,4 +73,17 @@ model Hotels {
   jobId Int
   location String
   scrappedOn DateTime @default(now())
+}
+
+model Bookings {
+  id Int @default(autoincrement()) @id
+  createdAt DateTime @default(now())
+  date DateTime
+  bookingType String 
+  bookingTypeId String 
+  userId Int        
+  totalAmount Int  
+  paymentIntent String @unique
+  isCompleted Boolean @default(false)
+  user User @relation(fields: [userId], references: [id])
 }

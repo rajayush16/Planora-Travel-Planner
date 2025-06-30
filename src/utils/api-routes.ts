@@ -1,9 +1,3 @@
-export const ADMIN_API_ROUTES = {
-  LOGIN: "/admin/login",
-  CREATE_JOB: "/admin/createJob",
-  JOB_DETAILS: "/admin/job-details",
-};
-
 export const USER_API_ROUTES = {
   SIGNUP: "/auth/signup",
   LOGIN: "/auth/login",
@@ -22,3 +16,10 @@ export const USER_API_ROUTES = {
   GET_USER_BOOKINGS: "/booking/get-bookings",
   GET_ALL_BOOKINGS: "/booking",
 };
+
+export const ADMIN_API_ROUTES = {
+  LOGIN: "/admin/login",
+  CREATE_JOB: "/admin/createJob",
+  JOB_DETAILS: "/admin/job-details",
+};
+

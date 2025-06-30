@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Providers } from "./providers";
 import { Inter } from "next/font/google";
+import AppProtector from "./app-protector";
+import PageLayout from "./page-layout";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,7 +17,8 @@ export default function RootLayout({children}: { children: React.ReactNode }) {
     <html lang="en" className="light">
       <body className={inter.className}>
         <Providers>
-          {children}
+          <AppProtector />
+          <PageLayout>{children}</PageLayout>
         </Providers>
       </body>
     </html>
