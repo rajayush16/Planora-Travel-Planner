@@ -1,7 +1,6 @@
 import { NextResponse } from "next/server";
 // import { Prisma } from "@prisma/client";
 import prisma from "@/lib/prisma";
-// import { importQueue } from "../../../../lib/queue";
 import { PrismaClientKnownRequestError } from "@prisma/client/runtime/library";
 import { importQueue } from "@/lib/queue";
 

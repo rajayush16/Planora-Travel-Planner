@@ -2,8 +2,9 @@ import { create } from "zustand";
 import {
   AuthSlice,
   createAuthSlice,
+  ScrapingSlice,
+  createScrapingSlice,
 } from "./slices";
-import { createScrapingSlice, ScrapingSlice } from "./slices/scraping-slices";
 
 type StoreState = AuthSlice & ScrapingSlice;
 
