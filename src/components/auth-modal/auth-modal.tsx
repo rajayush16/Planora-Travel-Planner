@@ -13,13 +13,13 @@ import {
 import { Architects_Daughter } from "next/font/google";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { USER_API_ROUTES } from "@/utils/api-routes";
+import { USER_API_ROUTES } from "@/utils";
 import { apiClient } from "@/lib";
 import { useAppStore } from "@/store";
 
 const ArchitectsDaughter = Architects_Daughter({
-  weight: "400", 
-  style: "normal", 
+  weight: "400", // if single weight, otherwise you use array like [400, 500, 700],
+  style: "normal", // if single style, otherwise you use array like ['normal', 'italic']
   subsets: ["latin"],
 });
 
