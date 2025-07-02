@@ -23,7 +23,7 @@ export const ADMIN_API_ROUTES = {
   LOGIN: `${baseRoute}/admin/login`,
   CREATE_JOB: `${baseRoute}/admin/createJob`,
   JOB_DETAILS: `${baseRoute}/admin/job-details`,
-  DASHBOARD_SCRAPING_CHART_DATA: `${baseRoute}/admin/dashboard/scraping-chart-data`,
-  DASHBOARD_METRICS: `${baseRoute}/admin/dashboard/metrics`,
+  DASHBOARD_SCRAPING_CHART_DATA: `${baseRoute}/admin/dashboard/components/scraping-chart-data`,
+  DASHBOARD_METRICS: `${baseRoute}/admin/dashboard/components/metrics`,
 };
 
