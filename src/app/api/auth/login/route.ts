@@ -2,8 +2,9 @@ import { NextResponse } from "next/server";
 import { SHA256 as sha256 } from "crypto-js";
 import { SignJWT } from "jose";
 import prisma from "../../../../lib/prisma";
-import { Prisma } from "@prisma/client";
+// import { Prisma } from "@prisma/client";
 import { cookies } from "next/headers";
+import { PrismaClientKnownRequestError } from "@/generated/prisma/runtime/library";
 
 const secret = new TextEncoder().encode(process.env.JWT_KEY as string);
 const alg = "HS256";
@@ -51,7 +52,7 @@ export async function POST(request: Request) {
       );
     }
   } catch (error) {
-    if (error instanceof Prisma.PrismaClientKnownRequestError) {
+    if (error instanceof PrismaClientKnownRequestError) {
       if (error.code === "P2002") {
         return NextResponse.json({ message: error.message }, { status: 400 });
       }
